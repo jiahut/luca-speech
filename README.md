@@ -85,3 +85,30 @@ Once the server is running, open your web browser and go to:
 [http://localhost:8000](http://localhost:8000)
 
 The web page will automatically list all the `.mp3` files from the `output` directory. You can select a file from the dropdown menu and use the player controls to listen to it.
+
+## Docker Support
+
+You can also run this application inside a Docker container.
+
+### Building the Image
+
+First, build the Docker image:
+
+```bash
+docker build -t tts-app .
+```
+
+### Running the Container
+
+To run the container and mount the `output` directory to your local machine, use the following command:
+
+```bash
+docker run -p 8000:8000 -v "$(pwd)/output":/app/output tts-app
+```
+
+This will:
+- Run the container in the background.
+- Map port 8000 of the container to port 8000 on your local machine.
+- Mount the `output` directory from your current local directory to the `/app/output` directory in the container. This allows you to access the generated audio files on your host machine.
+
+You can then access the web player at [http://localhost:8000](http://localhost:8000).
