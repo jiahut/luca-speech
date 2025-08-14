@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Audio Player</h1>
+    <div class="player-container">
+        <div class="file-selector">
+            <label for="audio-select">Choose an audio file:</label>
+            <select id="audio-select"></select>
+        </div>
+        <audio id="audio-player" controls></audio>
+        <div class="controls">
+            <button id="play-pause-btn">Play</button>
+            <button id="loop-btn">Loop: Off</button>
+            <div class="speed-controls">
+                <span>Speed:</span>
+                <button class="speed-btn" data-speed="0.5">0.5x</button>
+                <button class="speed-btn" data-speed="0.7">0.7x</button>
+                <button class="speed-btn" data-speed="1.0">1.0x</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

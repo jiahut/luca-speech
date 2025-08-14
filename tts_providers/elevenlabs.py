@@ -39,10 +39,10 @@ class ElevenLabsProvider(TTSProvider):
 
             with open(output_path, 'wb') as f:
                 f.write(response.content)
-            print(f"Audio saved to {output_path}")
             return output_path
         except requests.exceptions.RequestException as e:
             print(f"Error calling ElevenLabs API: {e}")
             if hasattr(e.response, 'text'):
                 print(f"Error details: {e.response.text}")
-            return None
+            # Raise the exception to be caught by the CLI
+            raise e
