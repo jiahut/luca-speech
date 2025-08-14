@@ -1,6 +1,7 @@
 # TTS provider configuration
 # active_provider can be "elevenlabs" or "speechify"
 active_provider: elevenlabs
+output_directory: "output"
 
 providers:
   elevenlabs:
@@ -13,5 +14,4 @@ providers:
     voice: "cliff"
     language: "en-US"
     model: "simba-english"
-    output_dir: "./"
     prefix: "tts_audio"

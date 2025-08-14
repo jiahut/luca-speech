@@ -63,3 +63,25 @@ python tts_cli.py "This is a test." -o my_audio.mp3
 ```
 
 The tool will use the provider specified in `config.yaml`.
+
+## Web Player
+
+This project also includes a web-based audio player to listen to the generated TTS files.
+
+### Running the Web Server
+
+To use the web player, you need to run the included web server:
+
+```bash
+python server.py
+```
+
+The server will start on port 8000.
+
+### Accessing the Player
+
+Once the server is running, open your web browser and go to:
+
+[http://localhost:8000](http://localhost:8000)
+
+The web page will automatically list all the `.mp3` files from the `output` directory. You can select a file from the dropdown menu and use the player controls to listen to it.
